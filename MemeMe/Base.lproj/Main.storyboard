@@ -42,7 +42,13 @@
                                 <items>
                                     <barButtonItem title="Pick" id="IRf-xu-u4p">
                                         <connections>
-                                            <action selector="pickAnImage:" destination="vXZ-lx-hvc" id="GoL-eC-QYH"/>
+                                            <action selector="pickAnImageFromAlbum:" destination="vXZ-lx-hvc" id="7p1-v6-juT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="T3W-Fr-Idv"/>
+                                    <barButtonItem systemItem="camera" id="WKQ-20-Bki">
+                                        <connections>
+                                            <action selector="pickAnImageFromCamera:" destination="vXZ-lx-hvc" id="nAW-Rt-lME"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -84,6 +90,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="cameraButton" destination="WKQ-20-Bki" id="wm8-vW-Y5E"/>
                         <outlet property="imagePickerView" destination="UE7-Hr-dDT" id="9YO-zV-qDP"/>
                     </connections>
                 </viewController>

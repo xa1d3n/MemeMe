@@ -12,16 +12,36 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBOutlet weak var imagePickerView: UIImageView!
     
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        // disable camera button if no camera is unavailable
+        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable( UIImagePickerControllerSourceType.Camera)
+    }
 
-    @IBAction func pickAnImage(sender: UIBarButtonItem) {
+
+    @IBAction func pickAnImageFromAlbum(sender: UIBarButtonItem) {
         // setup image picker
         let imgPicker = UIImagePickerController()
         //set delegate
         imgPicker.delegate = self
+        // set image source
+        imgPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        // display image picker
+        self.presentViewController(imgPicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func pickAnImageFromCamera(sender: UIBarButtonItem) {
+        // setup image picker
+        let imgPicker = UIImagePickerController()
+        //set delegate
+        imgPicker.delegate = self
+        // set image source
+        imgPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         // display image picker
         self.presentViewController(imgPicker, animated: true, completion: nil)
     }
