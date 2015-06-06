@@ -19,7 +19,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvd-nN-bfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-894" y="42"/>
+            <point key="canvasLocation" x="-321" y="259.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -128,7 +128,7 @@
                                 </variation>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="868-zQ-CBM" secondAttribute="centerX" id="2BM-av-u3K"/>
                             <constraint firstItem="FbM-Hg-bJ5" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="4nO-rv-EIe"/>
@@ -139,10 +139,9 @@
                             <constraint firstItem="41t-D2-qyW" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Gcl-O2-Wsa"/>
                             <constraint firstItem="41t-D2-qyW" firstAttribute="top" secondItem="2cT-dp-YGf" secondAttribute="bottom" constant="44" id="IdT-l8-1iC"/>
                             <constraint firstItem="FbM-Hg-bJ5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="28" id="Itf-LA-Tqm"/>
-                            <constraint firstItem="FbM-Hg-bJ5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="32" id="QHZ-Hz-tX7"/>
                             <constraint firstItem="41t-D2-qyW" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="S3P-Ih-baO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FbM-Hg-bJ5" secondAttribute="trailing" constant="31" id="XHF-gJ-Waz"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="41t-D2-qyW" secondAttribute="bottom" id="aUd-HF-w9R"/>
+                            <constraint firstItem="FbM-Hg-bJ5" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="16" id="ahm-Ua-uud"/>
                             <constraint firstAttribute="trailingMargin" secondItem="41t-D2-qyW" secondAttribute="trailing" constant="-16" id="cRB-8w-xiT"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="41t-D2-qyW" secondAttribute="bottom" id="gwg-VX-bLQ"/>
                             <constraint firstItem="41t-D2-qyW" firstAttribute="top" secondItem="2cT-dp-YGf" secondAttribute="bottom" constant="16" id="lWa-ld-AFI"/>
@@ -150,17 +149,18 @@
                             <constraint firstAttribute="centerX" secondItem="868-zQ-CBM" secondAttribute="centerX" id="tqS-99-t3i"/>
                             <constraint firstItem="2cT-dp-YGf" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="32" id="u2d-rE-exb"/>
                             <constraint firstItem="2cT-dp-YGf" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="28" id="vK8-va-dza"/>
-                            <constraint firstItem="FbM-Hg-bJ5" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="xGb-7x-H0n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FbM-Hg-bJ5" secondAttribute="trailing" constant="31" id="xl2-BK-5DE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2cT-dp-YGf" secondAttribute="trailing" constant="31" id="y3X-os-4Ff"/>
+                            <constraint firstItem="FbM-Hg-bJ5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="32" id="yr6-55-X3U"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="4nO-rv-EIe"/>
                                 <exclude reference="6qc-df-bzC"/>
                                 <exclude reference="Itf-LA-Tqm"/>
-                                <exclude reference="QHZ-Hz-tX7"/>
-                                <exclude reference="XHF-gJ-Waz"/>
-                                <exclude reference="xGb-7x-H0n"/>
+                                <exclude reference="ahm-Ua-uud"/>
+                                <exclude reference="xl2-BK-5DE"/>
+                                <exclude reference="yr6-55-X3U"/>
                                 <exclude reference="2BM-av-u3K"/>
                                 <exclude reference="51Q-x3-cWN"/>
                                 <exclude reference="9QM-fo-TED"/>
@@ -196,9 +196,9 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <include reference="QHZ-Hz-tX7"/>
-                                <include reference="XHF-gJ-Waz"/>
-                                <include reference="xGb-7x-H0n"/>
+                                <include reference="ahm-Ua-uud"/>
+                                <include reference="xl2-BK-5DE"/>
+                                <include reference="yr6-55-X3U"/>
                                 <include reference="9QM-fo-TED"/>
                                 <include reference="tqS-99-t3i"/>
                                 <include reference="u2d-rE-exb"/>
@@ -214,6 +214,11 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="action" id="A48-SB-GZf">
                             <connections>
                                 <action selector="share:" destination="vXZ-lx-hvc" id="ASO-2s-Pp7"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="4qV-lf-NXM">
+                            <connections>
+                                <action selector="cancel:" destination="vXZ-lx-hvc" id="gDb-9s-kFO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

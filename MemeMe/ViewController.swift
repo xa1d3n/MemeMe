@@ -130,6 +130,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func save() {
         var meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, ogImage: imagePickerView.image!, memedImage: generateMemedImage())
         controller.dismissViewControllerAnimated(true, completion: nil)
+        
+        // add to the memes array in AppDelegate.swift
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     
@@ -165,6 +170,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        
+    }
 
 }
 
