@@ -17,6 +17,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
+    var controller: UIActivityViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -127,6 +129,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func save() {
         var meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, ogImage: imagePickerView.image!, memedImage: generateMemedImage())
+        controller.dismissViewControllerAnimated(true, completion: nil)
     }
     
     
@@ -153,9 +156,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func share(sender: UIBarButtonItem) {
         // pass image to share
-        let image:UIImage = generateMemedImage()
-        //let avtivityController = UIActivityViewController(activityItems: image, applicationActivities: nil)
+        controller = UIActivityViewController(activityItems: [generateMemedImage()], applicationActivities: nil)
+        // present the controller
+        
+        self.presentViewController(controller, animated: true, completion: nil)
+        controller.completionWithItemsHandler = { activity, success, items, error in
+            self.save()
+        }
     }
+    
 
 }
 
