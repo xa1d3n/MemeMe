@@ -1,26 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="syR-ch-JrP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="3II-mp-5ut">
-            <objects>
-                <navigationController id="syR-ch-JrP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XkF-8m-ACN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="gOS-4F-BjI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gvd-nN-bfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-321" y="259.5"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -126,41 +110,89 @@
                                         <include reference="K16-Dn-XzJ"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="48" y="80" width="305" height="48"/>
+                                </variation>
                             </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUN-e5-wk4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="kfk-46-Lht"/>
+                                    <constraint firstAttribute="width" constant="400" id="l0L-96-WQO"/>
+                                </constraints>
+                                <textAttributes key="titleTextAttributes">
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem id="WRd-ue-Ein">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="rSc-II-PUS">
+                                            <connections>
+                                                <action selector="share:" destination="vXZ-lx-hvc" id="8uG-fA-LxM"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="ZRR-PO-4Qn">
+                                            <connections>
+                                                <segue destination="stz-5k-2i1" kind="show" id="bSG-yX-dco"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="kfk-46-Lht"/>
+                                        <exclude reference="l0L-96-WQO"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="kfk-46-Lht"/>
+                                        <include reference="l0L-96-WQO"/>
+                                    </mask>
+                                </variation>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="EUN-e5-wk4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="0ZB-Og-JXq"/>
+                            <constraint firstItem="FbM-Hg-bJ5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="32" id="1vm-Rh-b5R"/>
                             <constraint firstAttribute="centerX" secondItem="868-zQ-CBM" secondAttribute="centerX" id="2BM-av-u3K"/>
                             <constraint firstItem="FbM-Hg-bJ5" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="4nO-rv-EIe"/>
                             <constraint firstAttribute="centerY" secondItem="868-zQ-CBM" secondAttribute="centerY" id="51Q-x3-cWN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FbM-Hg-bJ5" secondAttribute="trailing" constant="17" id="6qc-df-bzC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2cT-dp-YGf" secondAttribute="trailing" constant="17" id="8q8-bS-dov"/>
                             <constraint firstAttribute="centerY" secondItem="868-zQ-CBM" secondAttribute="centerY" id="9QM-fo-TED"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EUN-e5-wk4" secondAttribute="trailing" constant="-16" id="CRh-ST-KE6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FbM-Hg-bJ5" secondAttribute="trailing" constant="31" id="E38-As-xuZ"/>
                             <constraint firstItem="41t-D2-qyW" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Gcl-O2-Wsa"/>
                             <constraint firstItem="41t-D2-qyW" firstAttribute="top" secondItem="2cT-dp-YGf" secondAttribute="bottom" constant="44" id="IdT-l8-1iC"/>
                             <constraint firstItem="FbM-Hg-bJ5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="28" id="Itf-LA-Tqm"/>
+                            <constraint firstItem="FbM-Hg-bJ5" firstAttribute="top" secondItem="EUN-e5-wk4" secondAttribute="bottom" constant="36" id="JPp-rY-xrn"/>
                             <constraint firstItem="41t-D2-qyW" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="S3P-Ih-baO"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="41t-D2-qyW" secondAttribute="bottom" id="aUd-HF-w9R"/>
-                            <constraint firstItem="FbM-Hg-bJ5" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="16" id="ahm-Ua-uud"/>
                             <constraint firstAttribute="trailingMargin" secondItem="41t-D2-qyW" secondAttribute="trailing" constant="-16" id="cRB-8w-xiT"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="41t-D2-qyW" secondAttribute="bottom" id="gwg-VX-bLQ"/>
+                            <constraint firstItem="EUN-e5-wk4" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="hd3-hA-VgT"/>
                             <constraint firstItem="41t-D2-qyW" firstAttribute="top" secondItem="2cT-dp-YGf" secondAttribute="bottom" constant="16" id="lWa-ld-AFI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="41t-D2-qyW" secondAttribute="trailing" constant="-16" id="qw2-KH-lov"/>
                             <constraint firstAttribute="centerX" secondItem="868-zQ-CBM" secondAttribute="centerX" id="tqS-99-t3i"/>
                             <constraint firstItem="2cT-dp-YGf" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="32" id="u2d-rE-exb"/>
                             <constraint firstItem="2cT-dp-YGf" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="28" id="vK8-va-dza"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FbM-Hg-bJ5" secondAttribute="trailing" constant="31" id="xl2-BK-5DE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2cT-dp-YGf" secondAttribute="trailing" constant="31" id="y3X-os-4Ff"/>
-                            <constraint firstItem="FbM-Hg-bJ5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="32" id="yr6-55-X3U"/>
                         </constraints>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="EUN-e5-wk4"/>
+                            </mask>
                             <mask key="constraints">
+                                <exclude reference="0ZB-Og-JXq"/>
+                                <exclude reference="CRh-ST-KE6"/>
+                                <exclude reference="hd3-hA-VgT"/>
+                                <exclude reference="1vm-Rh-b5R"/>
                                 <exclude reference="4nO-rv-EIe"/>
                                 <exclude reference="6qc-df-bzC"/>
+                                <exclude reference="E38-As-xuZ"/>
                                 <exclude reference="Itf-LA-Tqm"/>
-                                <exclude reference="ahm-Ua-uud"/>
-                                <exclude reference="xl2-BK-5DE"/>
-                                <exclude reference="yr6-55-X3U"/>
+                                <exclude reference="JPp-rY-xrn"/>
                                 <exclude reference="2BM-av-u3K"/>
                                 <exclude reference="51Q-x3-cWN"/>
                                 <exclude reference="9QM-fo-TED"/>
@@ -195,10 +227,16 @@
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="EUN-e5-wk4"/>
+                            </mask>
                             <mask key="constraints">
-                                <include reference="ahm-Ua-uud"/>
-                                <include reference="xl2-BK-5DE"/>
-                                <include reference="yr6-55-X3U"/>
+                                <include reference="0ZB-Og-JXq"/>
+                                <include reference="CRh-ST-KE6"/>
+                                <include reference="hd3-hA-VgT"/>
+                                <include reference="1vm-Rh-b5R"/>
+                                <include reference="E38-As-xuZ"/>
+                                <include reference="JPp-rY-xrn"/>
                                 <include reference="9QM-fo-TED"/>
                                 <include reference="tqS-99-t3i"/>
                                 <include reference="u2d-rE-exb"/>
@@ -219,7 +257,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="4qV-lf-NXM">
                             <connections>
                                 <action selector="cancel:" destination="vXZ-lx-hvc" id="gDb-9s-kFO"/>
-                                <segue destination="stz-5k-2i1" kind="show" id="SEy-Ii-sHt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -227,13 +264,13 @@
                         <outlet property="bottomTextField" destination="2cT-dp-YGf" id="avu-3t-fLd"/>
                         <outlet property="cameraButton" destination="3Iu-Dz-IpB" id="Tz5-WL-F5p"/>
                         <outlet property="imagePickerView" destination="868-zQ-CBM" id="FXZ-Sf-xVj"/>
-                        <outlet property="shareButton" destination="A48-SB-GZf" id="Lei-Fk-97w"/>
+                        <outlet property="shareButton" destination="rSc-II-PUS" id="WUn-VX-9cH"/>
                         <outlet property="topTextField" destination="FbM-Hg-bJ5" id="HEp-NT-aG7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="583" y="259.5"/>
+            <point key="canvasLocation" x="582" y="259.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="piT-u3-n5B">
@@ -324,11 +361,17 @@
                         </connections>
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="" image="collection" id="ZPf-s6-Klv"/>
-                    <navigationItem key="navigationItem" title="Sent Memes" id="txp-7y-peq"/>
+                    <navigationItem key="navigationItem" title="Title" id="15R-mo-ZDB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4qK-sh-6rL">
+                            <connections>
+                                <segue destination="vXZ-lx-hvc" kind="showDetail" id="ec3-iQ-ssO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="110-PP-Urz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3066" y="662.25"/>
+            <point key="canvasLocation" x="2052" y="1505.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="K03-r6-eVH">
@@ -347,7 +390,7 @@
             </objects>
             <point key="canvasLocation" x="2226" y="-444"/>
         </scene>
-        <!--Sent Memes-->
+        <!--Title-->
         <scene sceneID="0lc-qT-xaD">
             <objects>
                 <tableViewController id="fie-cf-tqR" customClass="SentMemesTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -370,11 +413,17 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="" image="table" id="C2Y-b8-5dS"/>
-                    <navigationItem key="navigationItem" title="Sent Memes" id="8Jz-Ow-WU0"/>
+                    <navigationItem key="navigationItem" title="Title" id="8XE-jH-RY2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="xAQ-6a-whu">
+                            <connections>
+                                <segue destination="vXZ-lx-hvc" kind="showDetail" id="3AU-OY-vx0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v94-bV-Eim" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3261" y="-435.75"/>
+            <point key="canvasLocation" x="1446" y="-552.75"/>
         </scene>
         <!--Meme Detail View Controller-->
         <scene sceneID="Iuv-UC-ESb">
@@ -444,4 +493,7 @@
         <image name="collection" width="30" height="30"/>
         <image name="table" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ec3-iQ-ssO"/>
+    </inferredMetricsTieBreakers>
 </document>
