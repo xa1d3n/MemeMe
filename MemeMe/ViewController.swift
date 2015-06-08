@@ -19,6 +19,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
+    @IBOutlet weak var shareButtonLand: UIBarButtonItem!
     var controller: UIActivityViewController!
     
     override func viewDidLoad() {
@@ -28,6 +29,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topTextField.delegate = self
         bottomTextField.delegate = self
         self.shareButton.enabled = false
+        self.shareButtonLand.enabled = false
         
         
         let memeTextAttributes = [
@@ -117,6 +119,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.imagePickerView.image = image
             self.shareButton.enabled = true
+            self.shareButtonLand.enabled = true
         }
     }
     
