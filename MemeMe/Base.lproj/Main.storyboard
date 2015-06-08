@@ -177,17 +177,17 @@
                                 <exclude reference="0ZB-Og-JXq"/>
                                 <exclude reference="CRh-ST-KE6"/>
                                 <exclude reference="hd3-hA-VgT"/>
-                                <exclude reference="2BM-av-u3K"/>
-                                <exclude reference="51Q-x3-cWN"/>
-                                <exclude reference="CMT-L9-mRf"/>
-                                <exclude reference="JSB-3k-Log"/>
-                                <exclude reference="PYY-wb-ccZ"/>
                                 <exclude reference="1vm-Rh-b5R"/>
                                 <exclude reference="4nO-rv-EIe"/>
                                 <exclude reference="6qc-df-bzC"/>
                                 <exclude reference="E38-As-xuZ"/>
                                 <exclude reference="Itf-LA-Tqm"/>
                                 <exclude reference="JPp-rY-xrn"/>
+                                <exclude reference="2BM-av-u3K"/>
+                                <exclude reference="51Q-x3-cWN"/>
+                                <exclude reference="CMT-L9-mRf"/>
+                                <exclude reference="JSB-3k-Log"/>
+                                <exclude reference="PYY-wb-ccZ"/>
                                 <exclude reference="8q8-bS-dov"/>
                                 <exclude reference="HSt-uO-BqO"/>
                                 <exclude reference="YIg-0t-gy6"/>
@@ -205,11 +205,11 @@
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
-                                <include reference="2BM-av-u3K"/>
-                                <include reference="51Q-x3-cWN"/>
                                 <include reference="4nO-rv-EIe"/>
                                 <include reference="6qc-df-bzC"/>
                                 <include reference="Itf-LA-Tqm"/>
+                                <include reference="2BM-av-u3K"/>
+                                <include reference="51Q-x3-cWN"/>
                                 <include reference="8q8-bS-dov"/>
                                 <include reference="vK8-va-dza"/>
                                 <include reference="S3P-Ih-baO"/>
@@ -226,12 +226,12 @@
                                 <include reference="0ZB-Og-JXq"/>
                                 <include reference="CRh-ST-KE6"/>
                                 <include reference="hd3-hA-VgT"/>
-                                <include reference="CMT-L9-mRf"/>
-                                <include reference="JSB-3k-Log"/>
-                                <include reference="PYY-wb-ccZ"/>
                                 <include reference="1vm-Rh-b5R"/>
                                 <include reference="E38-As-xuZ"/>
                                 <include reference="JPp-rY-xrn"/>
+                                <include reference="CMT-L9-mRf"/>
+                                <include reference="JSB-3k-Log"/>
+                                <include reference="PYY-wb-ccZ"/>
                                 <include reference="HSt-uO-BqO"/>
                                 <include reference="YIg-0t-gy6"/>
                                 <include reference="06s-yW-pl6"/>
@@ -258,7 +258,9 @@
                         <outlet property="bottomTextField" destination="2cT-dp-YGf" id="avu-3t-fLd"/>
                         <outlet property="cameraButton" destination="3Iu-Dz-IpB" id="Tz5-WL-F5p"/>
                         <outlet property="imagePickerView" destination="868-zQ-CBM" id="FXZ-Sf-xVj"/>
+                        <outlet property="navBar" destination="EUN-e5-wk4" id="KDc-r1-8WJ"/>
                         <outlet property="shareButton" destination="rSc-II-PUS" id="WUn-VX-9cH"/>
+                        <outlet property="toolBar" destination="41t-D2-qyW" id="ftT-S9-g4a"/>
                         <outlet property="topTextField" destination="FbM-Hg-bJ5" id="HEp-NT-aG7"/>
                     </connections>
                 </viewController>
