@@ -19,6 +19,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
+    var topText: String!
+    var bottomText: String!
+    var memeImg: UIImage!
+    
     var controller: UIActivityViewController!
     
     override func viewDidLoad() {
@@ -46,6 +50,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable( UIImagePickerControllerSourceType.Camera)
         
         self.subscribeToKeyboardNotifications()
+        
+        if (topText != nil) {
+            topTextField.text = topText
+        }
+        
+        if (bottomText != nil) {
+            bottomTextField.text = bottomText
+        }
+        
+        if (memeImg != nil) {
+            imagePickerView.image = memeImg
+            self.shareButton.enabled = true
+        }
+        
     }
     
     

@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditMemeViewController" id="vXZ-lx-hvc" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -372,6 +372,11 @@
                                     <constraint firstAttribute="height" constant="44" id="oyh-XD-KtD"/>
                                 </constraints>
                                 <items>
+                                    <barButtonItem systemItem="edit" id="jsp-0Z-N4U">
+                                        <connections>
+                                            <action selector="editMeme:" destination="bUf-jX-3jw" id="6nr-Lz-JpG"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="48N-sx-reB"/>
                                     <barButtonItem systemItem="trash" id="gYR-73-ubQ">
                                         <connections>
