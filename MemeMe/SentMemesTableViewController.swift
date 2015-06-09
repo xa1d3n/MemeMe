@@ -27,6 +27,7 @@ class SentMemesTableViewController: UITableViewController {
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
         memes = appDelegate.memes
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +64,7 @@ class SentMemesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         detailController.meme = self.memes[indexPath.row].memedImage
+        detailController.index = indexPath.row
         self.navigationController!.pushViewController(detailController, animated: true)
     }
 

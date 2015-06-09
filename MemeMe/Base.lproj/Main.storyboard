@@ -366,12 +366,29 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mdD-ma-IYt">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ytw-00-lJA">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="oyh-XD-KtD"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="48N-sx-reB"/>
+                                    <barButtonItem systemItem="trash" id="gYR-73-ubQ">
+                                        <connections>
+                                            <action selector="deleteMeme:" destination="bUf-jX-3jw" id="a2P-SW-3n6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ytw-00-lJA" secondAttribute="trailing" constant="-16" id="3mz-Ds-Jbw"/>
                             <constraint firstItem="mdD-ma-IYt" firstAttribute="top" secondItem="PIB-8P-etA" secondAttribute="topMargin" id="Kqf-Ez-7Y6"/>
                             <constraint firstItem="9Qs-y9-qRb" firstAttribute="top" secondItem="mdD-ma-IYt" secondAttribute="bottom" id="LKM-hv-va0"/>
+                            <constraint firstItem="9Qs-y9-qRb" firstAttribute="top" secondItem="Ytw-00-lJA" secondAttribute="bottom" id="ivi-v5-HkH"/>
                             <constraint firstItem="mdD-ma-IYt" firstAttribute="leading" secondItem="PIB-8P-etA" secondAttribute="leadingMargin" constant="-16" id="nE0-ln-4q8"/>
+                            <constraint firstItem="Ytw-00-lJA" firstAttribute="leading" secondItem="PIB-8P-etA" secondAttribute="leadingMargin" constant="-16" id="uRj-pD-tcu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mdD-ma-IYt" secondAttribute="trailing" constant="-16" id="z7o-x6-IIG"/>
                         </constraints>
                     </view>
