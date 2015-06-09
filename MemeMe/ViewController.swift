@@ -29,13 +29,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTextField.delegate = self
         self.shareButton.enabled = false
         
+        // set placeholder text color
+        self.topTextField.attributedPlaceholder = NSAttributedString(string:"TOP",
+            attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
         
-        let memeTextAttributes = [
-            NSStrokeColorAttributeName : UIColor.whiteColor(),
-            NSForegroundColorAttributeName : UIColor.blackColor(),
-            NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSStrokeWidthAttributeName : 3.0
-        ]
+        // set placeholder text color
+        self.bottomTextField.attributedPlaceholder = NSAttributedString(string: "BOTTOM", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
 
     }
     
