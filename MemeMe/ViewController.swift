@@ -29,8 +29,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // set delegates
         topTextField.delegate = self
         bottomTextField.delegate = self
+        
+        // disable the share button
         self.shareButton.enabled = false
         
         // set placeholder text color
@@ -51,6 +54,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         self.subscribeToKeyboardNotifications()
         
+        // set data when editing
         if (topText != nil) {
             topTextField.text = topText
         }
@@ -67,35 +71,42 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
+    // hide the status bar
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+        // unsubscribe from keyboard
         self.unsubscribeFromKeyboardNotifications()
     }
     
     
+    // handle keyboard typing
     func subscribeToKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
+    // unsubscribe from keyboard events
     func unsubscribeFromKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
          NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
     
+    // move view up when keyboard is shown
     func keyboardWillShow(notification: NSNotification) {
         self.view.frame.origin.y -= getKeyboardHeight(notification)
     }
     
     
+    // move view down when keyboard is dismissed
     func keyboardWillHide(notification: NSNotification) {
         self.view.frame.origin.y += getKeyboardHeight(notification)
     }
     
+    // set keyboard height
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
@@ -103,6 +114,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
 
+    // handle image picker button
     @IBAction func pickAnImageFromAlbum(sender: UIBarButtonItem) {
         // setup image picker
         let imgPicker = UIImagePickerController()
@@ -114,6 +126,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.presentViewController(imgPicker, animated: true, completion: nil)
     }
     
+    // handle camera button
     @IBAction func pickAnImageFromCamera(sender: UIBarButtonItem) {
         // setup image picker
         let imgPicker = UIImagePickerController()
@@ -125,12 +138,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.presentViewController(imgPicker, animated: true, completion: nil)
     }
     
+    // handle did cancel image selection
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // handle selection of image
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        // dismiss the view
         self.dismissViewControllerAnimated(true, completion: nil)
+        // set image
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.imagePickerView.image = image
             self.shareButton.enabled = true
@@ -138,20 +155,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
-    func textFieldDidBeginEditing(textField: UITextField) {
-        
-    }
-    
+    // hide keyboard on return
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
+    // hide keyboar on tap
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.resignFirstResponder()
         self.view.endEditing(true)
     }
     
+    // save meme iformation
     func save() {
         var meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, ogImage: imagePickerView.image!, memedImage: generateMemedImage())
         controller.dismissViewControllerAnimated(true, completion: nil)
@@ -163,6 +179,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
+    // generate image from view
     func generateMemedImage() -> UIImage {
         
         // Hide toolbar and navbar
@@ -184,6 +201,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return memedImage
     }
     
+    // hadle share button
     @IBAction func share(sender: UIBarButtonItem) {
         // pass image to share
         controller = UIActivityViewController(activityItems: [generateMemedImage()], applicationActivities: nil)
@@ -193,10 +211,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         controller.completionWithItemsHandler = { activity, success, items, error in
             self.save()
         }
-    }
-    
-    @IBAction func cancel(sender: UIBarButtonItem) {
-        
     }
 
 }

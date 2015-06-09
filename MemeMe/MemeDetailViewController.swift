@@ -30,8 +30,10 @@ class MemeDetailViewController: UIViewController {
         super.viewWillAppear(animated)
         self.imageView.image = meme
         
+        // hide tab bar
         self.tabBarController?.tabBar.hidden = true
         
+        // get memes
         let object = UIApplication.sharedApplication().delegate
         appDelegate = object as! AppDelegate
 
@@ -39,25 +41,28 @@ class MemeDetailViewController: UIViewController {
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+        // show tab bar
         self.tabBarController?.tabBar.hidden = false
     }
     
+    // handle delete meme button
     @IBAction func deleteMeme(sender: UIBarButtonItem) {
+        // set alert properties
         let controller = UIAlertController()
         controller.message = "This meme will be deleted from the collection"
         
+        // handle delete button
         let deleteAction = UIAlertAction(title: "Delete Meme", style: UIAlertActionStyle.Destructive) { (UIAlertAction) -> Void in
 
-           /* let object = UIApplication.sharedApplication().delegate
-            let appDelegate = object as! AppDelegate
-
-            appDelegate.memes.removeAtIndex(self.index) */
+            // remove the meme
             self.appDelegate.memes.removeAtIndex(self.index)
             
+            // if empty-> go back
             if (self.appDelegate.memes.isEmpty) {
                 self.navigationController?.popToRootViewControllerAnimated(true)
             }
             else {
+                // select another image if not null
                 if (self.index == 0) {
                     if (self.appDelegate.memes.count > 1) {
                         self.index = self.index + 1
@@ -66,6 +71,7 @@ class MemeDetailViewController: UIViewController {
                 else {
                     self.index = self.index - 1
                 }
+                // show new image
                 self.imageView.image = self.appDelegate.memes[self.index].memedImage
                 
             }
@@ -75,9 +81,8 @@ class MemeDetailViewController: UIViewController {
         
         controller.addAction(deleteAction)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) {
-            action in self.navigationController?.popToRootViewControllerAnimated(true)
-        }
+        // add cancel button
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
         
         controller.addAction(cancelAction)
         self.presentViewController(controller, animated: true, completion: nil)
@@ -86,12 +91,16 @@ class MemeDetailViewController: UIViewController {
         
     }
 
+    // handle edit button
     @IBAction func editMeme(sender: UIBarButtonItem) {
+        // get the edit meme controller
         let editMemeController = self.storyboard!.instantiateViewControllerWithIdentifier("EditMemeViewController") as! ViewController
 
+        // set data
         editMemeController.topText = self.appDelegate.memes[index].topText
         editMemeController.bottomText = self.appDelegate.memes[index].bottomText
         editMemeController.memeImg = self.appDelegate.memes[index].ogImage
+        // present controller
         self.presentViewController(editMemeController, animated: true, completion: nil)
     }
     /*
