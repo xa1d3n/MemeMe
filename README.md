@@ -1,4 +1,5 @@
 # MemeMe
+#Meme creator iPhone app built with Swift 
 
 - enables a user to take a picture, and add text at the top and bottom to form a meme.
 - allows for sharing of memes via text, Twitter, Facebook, email.
