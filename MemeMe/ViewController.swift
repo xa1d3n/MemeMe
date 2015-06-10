@@ -97,13 +97,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // move view up when keyboard is shown
     func keyboardWillShow(notification: NSNotification) {
-        self.view.frame.origin.y -= getKeyboardHeight(notification)
+        view.frame.origin.y -= getKeyboardHeight(notification)
     }
     
     
     // move view down when keyboard is dismissed
     func keyboardWillHide(notification: NSNotification) {
-        self.view.frame.origin.y += getKeyboardHeight(notification)
+        view.frame.origin.y += getKeyboardHeight(notification)
     }
     
     // set keyboard height
@@ -149,8 +149,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.dismissViewControllerAnimated(true, completion: nil)
         // set image
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            self.imagePickerView.image = image
-            self.shareButton.enabled = true
+            imagePickerView.image = image
+            shareButton.enabled = true
             
         }
     }
@@ -163,8 +163,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // hide keyboar on tap
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        self.view.resignFirstResponder()
-        self.view.endEditing(true)
+        view.resignFirstResponder()
+        view.endEditing(true)
     }
     
     // save meme iformation
@@ -183,20 +183,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func generateMemedImage() -> UIImage {
         
         // Hide toolbar and navbar
-        self.toolBar.hidden = true
-        self.navBar.hidden = true
+        toolBar.hidden = true
+        navBar.hidden = true
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
-        self.view.drawViewHierarchyInRect(self.view.frame,
+        view.drawViewHierarchyInRect(self.view.frame,
             afterScreenUpdates: true)
         let memedImage : UIImage =
         UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         //  Show toolbar and navbar
-        self.toolBar.hidden = false
-        self.navBar.hidden = false
+        toolBar.hidden = false
+        navBar.hidden = false
         
         return memedImage
     }

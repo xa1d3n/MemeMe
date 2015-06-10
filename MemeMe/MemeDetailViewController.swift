@@ -28,10 +28,10 @@ class MemeDetailViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.imageView.image = meme
+        imageView.image = meme
         
         // hide tab bar
-        self.tabBarController?.tabBar.hidden = true
+        tabBarController?.tabBar.hidden = true
         
         // get memes
         let object = UIApplication.sharedApplication().delegate
@@ -42,7 +42,7 @@ class MemeDetailViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         // show tab bar
-        self.tabBarController?.tabBar.hidden = false
+        tabBarController?.tabBar.hidden = false
     }
     
     // handle delete meme button
@@ -97,9 +97,9 @@ class MemeDetailViewController: UIViewController {
         let editMemeController = self.storyboard!.instantiateViewControllerWithIdentifier("EditMemeViewController") as! ViewController
 
         // set data
-        editMemeController.topText = self.appDelegate.memes[index].topText
-        editMemeController.bottomText = self.appDelegate.memes[index].bottomText
-        editMemeController.memeImg = self.appDelegate.memes[index].ogImage
+        editMemeController.topText = appDelegate.memes[index].topText
+        editMemeController.bottomText = appDelegate.memes[index].bottomText
+        editMemeController.memeImg = appDelegate.memes[index].ogImage
         // present controller
         self.presentViewController(editMemeController, animated: true, completion: nil)
     }

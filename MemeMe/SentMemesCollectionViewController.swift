@@ -30,7 +30,7 @@ class SentMemesCollectionViewController: UICollectionViewController, UICollectio
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
         memes = appDelegate.memes
-        self.collectionView?.reloadData()
+        collectionView?.reloadData()
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -47,12 +47,12 @@ class SentMemesCollectionViewController: UICollectionViewController, UICollectio
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         // get details controller
-        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        let detailController = storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         // set details
-        detailController.meme = self.memes[indexPath.row].memedImage
+        detailController.meme = memes[indexPath.row].memedImage
         detailController.index = indexPath.row
         // present controller
-        self.navigationController!.pushViewController(detailController, animated: true)
+        navigationController!.pushViewController(detailController, animated: true)
     
     }
 
