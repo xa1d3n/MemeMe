@@ -52,6 +52,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewWillAppear(animated)
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable( UIImagePickerControllerSourceType.Camera)
         
+        
         self.subscribeToKeyboardNotifications()
         
         // set data when editing
@@ -143,8 +144,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    
     // handle selection of image
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         // dismiss the view
         self.dismissViewControllerAnimated(true, completion: nil)
         // set image
@@ -161,15 +163,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return true
     }
     
-    // hide keyboar on tap
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         view.resignFirstResponder()
         view.endEditing(true)
     }
     
+    
     // save meme iformation
     func save() {
-        var meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, ogImage: imagePickerView.image!, memedImage: generateMemedImage())
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, ogImage: imagePickerView.image!, memedImage: generateMemedImage())
         controller.dismissViewControllerAnimated(true, completion: nil)
         
         // add to the memes array in AppDelegate.swift
